@@ -20,7 +20,7 @@ Our current release target includes:
 
 ### POL
 
-The POL allows games to be registered with it and to use its POL in their own engines. The POL contract is still being developed and eventually ownership of the contract will be fully controlled by token holders. Initially we do envision needing updates to the POL contract to develop a flexible interface that can provide support for a large variety of games.
+The POL allows games to be registered with it and to use its POL in their own engines. The POL contract is still being developed and eventually ownership of the contract will be fully controlled by token holders. Initially we do envision needing updates to the POL contract to develop a flexible interface that can provide support for a large variety of games. The POL contract also holds all the XTC tokens designated as rewards and can enable and disable them for individual games.
 
 ## POL contribution
 
