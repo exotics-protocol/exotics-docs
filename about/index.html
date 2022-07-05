@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://exotics.gg/docs/about/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Exotic Gaming - Exotics Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Exotics Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../bootstrap/" class="nav-link">Bootstrap</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../roadmap/" class="nav-link">Roadmap</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../token/" class="nav-link">Token</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../contracts/" class="nav-link">Contracts</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#exotic-gaming" class="nav-link">Exotic Gaming</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#protocol-overview" class="nav-link">Protocol Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pol-contribution" class="nav-link">POL contribution</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#revenue-fee" class="nav-link">Revenue Fee</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#xtc-token" class="nav-link">XTC token</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#revenue-distribution" class="nav-link">Revenue distribution</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#initial-game" class="nav-link">Initial game.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="exotic-gaming">Exotic Gaming</h1>
+<p>The exotic protocol is a decentralised gaming application.</p>
+<h2 id="introduction">Introduction</h2>
+<p>We are releasing an early beta of our gaming protocol while iterating towards a general access release. We aim to offer fairer odds than any bookmaking available by using <strong>real</strong> protocol owned liquidity (POL) as counterparty to users bets. We will grow the POL organically by generating real revenue from genuine use cases. Using this POL will enable us to implement new game/event inputs and wagering engines.</p>
+<p>This initial release is an alpha release and our contracts <strong>aren't verified</strong>, we do plan to do this after a security audit by a reputable organisation. The only user funds at risk are non determined bets, however this risk is tempered by having maximum bet limits set quite low. There are workarounds of course but please use your own judgement when playing (funds may be with sifu).</p>
+<h2 id="protocol-overview">Protocol Overview</h2>
+<p>The architecture of the system is quite simple. One central contract is the "house" (and holds the POL), games (contracts) can be enabled (with risk limits) to both contribute to and draw from the POL. Doing this helps both seperate our concerns with logic and enable us to introduce new gaming experiences while having the usage of the POL.</p>
+<p>The games contain the actual logic of the wagering engine and the interface for users to bet on. This decoupling could allow independently developed games make use of the POL in their own game with acceptance of the game being decided by governance vote. Our initial relase uses an parimutuel wagering engine system.</p>
+<p>Our current release target includes:
+* A single intentionally simple game contributing to POL
+* Using POL as a "jackpot" feature in game</p>
+<h3 id="pol">POL</h3>
+<p>The POL allows games to be registered with it and to use its POL in their own engines. The POL contract is still being developed and eventually ownership of the contract will be fully controlled by token holders. Initially we do envision needing updates to the POL contract to develop a flexible interface that can provide support for a large variety of games. The POL contract also holds all the XTC tokens designated as rewards and can enable and disable them for individual games.</p>
+<h2 id="pol-contribution">POL contribution</h2>
+<p>An adjustable fee (currently set to 0.5%) of each wager amount is contributed to building protocol owned liquidity. This is calculated by taking the fee amount of the total msg.value sent to the game while betting. This fee along with all others will eventually be delegated to gauges voted on by protocol token owners.</p>
+<h2 id="revenue-fee">Revenue Fee</h2>
+<p>There is also a fee (currently set to 0.5%) that is charged for usage of the protocol.</p>
+<h2 id="xtc-token">XTC token</h2>
+<p>The XTC token is a fair launch token that is used during the bootstrap phase to incentivise users to place bets. This token will be used in the future to govern the protocol parameters and also enables users to take part in revenue sharing.</p>
+<p>The token distribution as part of games does not follow a pre-defined emission schedule. The protocol team reserves the right to use emissions as we deem the most effective way to grow the protocol. There are no token sale events planned and their are no third party investors in our project.</p>
+<h2 id="revenue-distribution">Revenue distribution</h2>
+<p>Holders of the XTC token who stake in the RevenueStaking contract earn a proportion (based on the weight of their XTC vs sum of all stakers) of all revenue fees. Fees accrue in real time and are always claimable.</p>
+<h2 id="initial-game">Initial game.</h2>
+<p>The initial game we release is dog track simulator. It uses a parimutuel wagering system and a fixed probability random outcome. The odds from the wagering engine should track the fixed probability as if not arbitrage could exist between real vs virtual odds. The betting pools will ultimatly accomadate many advanced bet types (each way/exacta etc) but initially is released with a single choose winner bet.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
