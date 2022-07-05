@@ -1,0 +1,8 @@
+site_name: Exotics Documentation
+site_url: https://exotics.gg/docs
+nav:
+  - About: index.md
+  - Bootstrap: bootstrap.md
+  - Roadmap: roadmap.md
+  - Token: token.md
+  - Contracts: contracts.md
