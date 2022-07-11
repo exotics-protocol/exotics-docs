@@ -14,7 +14,8 @@ This document outlines our bootstrap phase roadmap, our whitepaper and full road
 - Second game
 - Security audit
 - Open source
-- Updated UI
+- UI refresh
+- Community building events
 
 ## Q1 2022
 

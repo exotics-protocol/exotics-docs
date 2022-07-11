@@ -10,7 +10,7 @@ A decentralised system which can accept wagers on any event while providing fair
 
 ## Bootstrap
 
-As a protocol we want the liquidity we control to be truly owned by us so it will be raised by protocol fees. In order to incentive people to play (raise protocol fees) we are distributing a protocol governance token to all users. This token awards the holder a share of the protocol revenue profits and will in the future allow voting on protocol parameters and third party protocols integration. View more informaiton on the [token distribution](token.md) or [revenue sharing](staking.md).
+As a protocol we want the liquidity we control to be truly owned by us so it will be raised by protocol fees. In order to incentive people to play (raise protocol fees) we are distributing a protocol governance token to all users. This token awards the holder a share of protocol revenue and will in the future allow voting on protocol parameters and third party protocols integration. View more informaiton on the [token distribution](token.md) or [revenue sharing](staking.md).
 
 
 ## Warning

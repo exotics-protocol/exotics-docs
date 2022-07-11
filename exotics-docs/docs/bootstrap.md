@@ -10,6 +10,8 @@ Our first game we have kept incredibly simple (KISS) and is a game based on the 
 
 As this game uses a pooled payout it runs on a frequency and is not an instant win game (although our future games may be). A new role takes place every 10 minutes. XTC tokens are distributed as rewards to all players of the game, to further incentive early betting (which are at a disadvantage due to changing odds) the incentives will be greatest 10 minutes (are earlier) before the role starts, they drop by 10% each minute up until the game starts.
 
+The game works by assigning weight to the face of a 6 sided die. This weight is assigned based on the total sum of all wagers on this number.
+
 As part of our Q4 roadmap we will be implementing a _jackpot_ feature where rolls could be eligble for a bonus payout. To play the game visit our [dapp]() and choose a roll to bet on.
 
 ## Fairness
@@ -27,3 +29,5 @@ The following calculations and parameters are applied to the game.
 **Odds**: (wager - fees) * total selected outcome / sum all outcomes
 
 **Roll ID**: A timestamp of when the roll will take place
+
+**Decimal Odds**: 1 / (wagers / totalWagers)
