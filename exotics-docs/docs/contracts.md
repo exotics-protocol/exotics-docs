@@ -6,7 +6,7 @@
 Contract | Address
 ------------ | -------------
 XTC Token |
-XTC Liquidity |
+House |
 Dice Game |
 Rewarder |
 Staking |
@@ -20,7 +20,7 @@ Team Vesting |
 Contract | Address
 ------------ | -------------
 XTC Token |
-XTC Liquidity |
+House |
 Dice Game |
 Rewarder |
 Staking |
