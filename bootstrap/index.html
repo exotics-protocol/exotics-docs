@@ -111,6 +111,7 @@
 <h2 id="dice-game">Dice game</h2>
 <p>Our first game we have kept incredibly simple (KISS) and is a game based on the outcome of a weighted dice. It uses the <a href="https://en.wikipedia.org/wiki/Parimutuel_betting">parimutuel betting</a> system to calculate probabilities and payouts. This has the effect that the odds are not known until the pool of wagers is closed, to offset this we will reward early players of the game with XTC tokens.</p>
 <p>As this game uses a pooled payout it runs on a frequency and is not an instant win game (although our future games may be). A new role takes place every 10 minutes. XTC tokens are distributed as rewards to all players of the game, to further incentive early betting (which are at a disadvantage due to changing odds) the incentives will be greatest 10 minutes (are earlier) before the role starts, they drop by 10% each minute up until the game starts.</p>
+<p>The game works by assigning weight to the face of a 6 sided die. This weight is assigned based on the total sum of all wagers on this number.</p>
 <p>As part of our Q4 roadmap we will be implementing a <em>jackpot</em> feature where rolls could be eligble for a bonus payout. To play the game visit our <a href="">dapp</a> and choose a roll to bet on.</p>
 <h2 id="fairness">Fairness</h2>
 <p>Roll results are provided by <a href="https://docs.chain.link/docs/chainlink-vrf/">chainlink VRF</a> providers. This ensures a fair and tamperproof way of deciding results.</p>
@@ -119,7 +120,8 @@
 <p><strong>Protocol fee</strong>: An amount of the total wager added to the protocol owned liquidity</p>
 <p><strong>Revenue fee</strong>: An amount of the total wager distributed to XTC stakers</p>
 <p><strong>Odds</strong>: (wager - fees) * total selected outcome / sum all outcomes</p>
-<p><strong>Roll ID</strong>: A timestamp of when the roll will take place</p></div>
+<p><strong>Roll ID</strong>: A timestamp of when the roll will take place</p>
+<p><strong>Decimal Odds</strong>: 1 / (wagers / totalWagers)</p></div>
             </div>
         </div>
 
